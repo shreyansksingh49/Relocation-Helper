@@ -63,6 +63,56 @@ window.onload = function () {
             <li>✔ Security</li>
         `;
     }
+     if (selectedPG === "gamma") {
+        document.getElementById("pgName").innerText = "🏠 Gamma PG";
+        document.getElementById("location").innerText = "📍 Indira Nagar";
+        document.getElementById("price").innerText = "₹8000/month";
+        document.getElementById("pgInfo").innerText =
+            "Affordable rooms, WiFi available, food available";
+
+        document.getElementById("community").innerText =
+            "Residents from Bihar";
+
+        document.getElementById("facilitiesList").innerHTML = `
+            <li>✔ WiFi</li>
+            <li>✔ GYM</li>
+            <li>✔ Parking</li>
+            <li>✔ Security</li>
+        `;
+    }
+    if (selectedPG === "pride") {
+        document.getElementById("pgName").innerText = "🏠 Pride PG";
+        document.getElementById("location").innerText = "📍 Matiyari";
+        document.getElementById("price").innerText = "₹5500/month";
+        document.getElementById("pgInfo").innerText =
+            "Affordable rooms, WiFi available, food available";
+
+        document.getElementById("community").innerText =
+            "Residents from Noida";
+
+        document.getElementById("facilitiesList").innerHTML = `
+            <li>✔ WiFi</li>
+            <li>✔ Food</li>
+            <li>✔ Security</li>
+        `;
+    }
+     if (selectedPG === "planex") {
+        document.getElementById("pgName").innerText = "🏠 Planex PG";
+        document.getElementById("location").innerText = "📍 Golf City";
+        document.getElementById("price").innerText = "9000/month";
+        document.getElementById("pgInfo").innerText =
+            "Affordable rooms, WiFi available, food available";
+
+        document.getElementById("community").innerText =
+            "Residents from Bengaluru";
+
+        document.getElementById("facilitiesList").innerHTML = `
+             <li>✔ WiFi</li>
+            <li>✔ GYM</li>
+            <li>✔ Parking</li>
+            <li>✔ Security</li>
+        `;
+    }
 };
 
 
