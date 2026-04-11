@@ -63,7 +63,7 @@ window.onload = function () {
             <li>✔ Security</li>
         `;
     }
-     if (selectedPG === "gamma") {
+     if (selectedPG === "Gamma PG") {
         document.getElementById("pgName").innerText = "🏠 Gamma PG";
         document.getElementById("location").innerText = "📍 Indira Nagar";
         document.getElementById("price").innerText = "₹8000/month";
@@ -80,7 +80,7 @@ window.onload = function () {
             <li>✔ Security</li>
         `;
     }
-    if (selectedPG === "pride") {
+    if (selectedPG === "Pride PG") {
         document.getElementById("pgName").innerText = "🏠 Pride PG";
         document.getElementById("location").innerText = "📍 Matiyari";
         document.getElementById("price").innerText = "₹5500/month";
@@ -96,7 +96,7 @@ window.onload = function () {
             <li>✔ Security</li>
         `;
     }
-     if (selectedPG === "planex") {
+     if (selectedPG === "Planex PG") {
         document.getElementById("pgName").innerText = "🏠 Planex PG";
         document.getElementById("location").innerText = "📍 Golf City";
         document.getElementById("price").innerText = "9000/month";
