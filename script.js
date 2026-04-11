@@ -1,18 +1,21 @@
-// HOME → RESULTS
+// ================= HOME → RESULTS =================
 function goToResults() {
     let hometown = document.getElementById("hometown").value;
 
-    // Save data in browser
+    // Save user input
     localStorage.setItem("hometown", hometown);
 
     // Redirect
     window.location.href = "results.html";
 }
 
-// RESULTS PAGE LOAD
+
+// ================= RESULTS PAGE =================
 window.onload = function () {
+
     let hometown = localStorage.getItem("hometown");
 
+    // Match text (only if element exists)
     if (document.getElementById("match")) {
         if (hometown && hometown.toLowerCase() === "kanpur") {
             document.getElementById("match").innerText =
@@ -23,63 +26,54 @@ window.onload = function () {
         }
     }
 
-    // DETAILS PAGE DATA
+    // ================= DETAILS PAGE =================
     let selectedPG = localStorage.getItem("pg");
 
     if (selectedPG === "sunrise") {
-        document.getElementById("pgName").innerText = "Sunrise PG";
+        document.getElementById("pgName").innerText = "🏠 Sunrise PG";
+        document.getElementById("location").innerText = "📍 Gomti Nagar";
+        document.getElementById("price").innerText = "₹7500/month";
         document.getElementById("pgInfo").innerText =
-            "Rent: ₹7500 | WiFi: Yes | Food: Available";
+            "Single/Double rooms, WiFi available, Food included";
+
         document.getElementById("community").innerText =
-            "Residents from UP & Kanpur";
+            "4 residents from UP, 1 from Kanpur";
+
+        document.getElementById("facilitiesList").innerHTML = `
+            <li>✔ WiFi</li>
+            <li>✔ Food Available</li>
+            <li>✔ Laundry</li>
+            <li>✔ CCTV Security</li>
+        `;
     }
 
     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Green Nest PG";
+        document.getElementById("pgName").innerText = "🏠 Green Nest PG";
+        document.getElementById("location").innerText = "📍 Gomti Nagar";
+        document.getElementById("price").innerText = "₹6500/month";
         document.getElementById("pgInfo").innerText =
-            "Rent: ₹6500 | WiFi: Yes | Food: yes";
+            "Affordable rooms, WiFi available, No food";
+
         document.getElementById("community").innerText =
             "Residents from Bihar";
+
+        document.getElementById("facilitiesList").innerHTML = `
+            <li>✔ WiFi</li>
+            <li>✔ Parking</li>
+            <li>✔ Security</li>
+        `;
     }
-     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Gamma PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹8000 | WiFi: Yes | Food: yes";
-        document.getElementById("community").innerText =
-            "Residents from Chandigarh";
-    }
-     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Pride PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹5500 | WiFi: Yes | Food: No";
-        document.getElementById("community").innerText =
-            "Residents from Sultanpur";
-    }
-     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Planex PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹9000 | WiFi: Yes | Food: Yes| GYM : Yes";
-        document.getElementById("community").innerText =
-            "Residents from Noida";
-    }
-     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Tagore Boys PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹4000 | WiFi: No | Food: No";
-        document.getElementById("community").innerText =
-            "Residents from Kolkata";
-    }
-     
 };
 
-// RESULTS → DETAILS
+
+// ================= RESULTS → DETAILS =================
 function viewDetails(pgName) {
     localStorage.setItem("pg", pgName);
     window.location.href = "details.html";
 }
-function goBack() {
-    window.location.href = "results.html";
-}
+
+
+// ================= BACK BUTTON =================
 function goBack() {
     window.location.href = "results.html";
 }
