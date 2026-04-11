@@ -37,10 +37,39 @@ window.onload = function () {
     if (selectedPG === "green") {
         document.getElementById("pgName").innerText = "Green Nest PG";
         document.getElementById("pgInfo").innerText =
-            "Rent: ₹6500 | WiFi: Yes | Food: No";
+            "Rent: ₹6500 | WiFi: Yes | Food: yes";
         document.getElementById("community").innerText =
             "Residents from Bihar";
     }
+     if (selectedPG === "green") {
+        document.getElementById("pgName").innerText = "Gamma PG";
+        document.getElementById("pgInfo").innerText =
+            "Rent: ₹8000 | WiFi: Yes | Food: yes";
+        document.getElementById("community").innerText =
+            "Residents from Chandigarh";
+    }
+     if (selectedPG === "green") {
+        document.getElementById("pgName").innerText = "Pride PG";
+        document.getElementById("pgInfo").innerText =
+            "Rent: ₹5500 | WiFi: Yes | Food: No";
+        document.getElementById("community").innerText =
+            "Residents from Sultanpur";
+    }
+     if (selectedPG === "green") {
+        document.getElementById("pgName").innerText = "Planex PG";
+        document.getElementById("pgInfo").innerText =
+            "Rent: ₹9000 | WiFi: Yes | Food: Yes| GYM : Yes";
+        document.getElementById("community").innerText =
+            "Residents from Noida";
+    }
+     if (selectedPG === "green") {
+        document.getElementById("pgName").innerText = "Tagore Boys PG";
+        document.getElementById("pgInfo").innerText =
+            "Rent: ₹4000 | WiFi: No | Food: No";
+        document.getElementById("community").innerText =
+            "Residents from Kolkata";
+    }
+     
 };
 
 // RESULTS → DETAILS
