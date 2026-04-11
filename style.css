@@ -142,3 +142,32 @@ button:hover {
     list-style: none;
     padding: 5px 0;
 }
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .pg-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .pg-card {
+        width: 100%;
+    }
+
+    .details-card {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+}
