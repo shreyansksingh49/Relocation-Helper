@@ -1,0 +1,25 @@
+<h2>Add PG</h2>
+
+<input id="name" placeholder="PG Name">
+<input id="location" placeholder="Location">
+<input id="price" placeholder="Price">
+<input id="contact" placeholder="Contact">
+
+<button onclick="addPG()">Add PG</button>
+
+<script>
+function addPG() {
+    fetch("http://localhost:3000/add-pg", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: name.value,
+            location: location.value,
+            price: price.value,
+            contact: contact.value
+        })
+    })
+    .then(res => res.text())
+    .then(data => alert(data));
+}
+</script>

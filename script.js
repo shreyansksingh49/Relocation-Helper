@@ -1,21 +1,18 @@
-// ================= HOME → RESULTS =================
+// HOME → RESULTS
 function goToResults() {
     let hometown = document.getElementById("hometown").value;
 
-    // Save user input
+    // Save data in browser
     localStorage.setItem("hometown", hometown);
 
     // Redirect
     window.location.href = "results.html";
 }
 
-
-// ================= RESULTS PAGE =================
+// RESULTS PAGE LOAD
 window.onload = function () {
-
     let hometown = localStorage.getItem("hometown");
 
-    // Match text (only if element exists)
     if (document.getElementById("match")) {
         if (hometown && hometown.toLowerCase() === "kanpur") {
             document.getElementById("match").innerText =
@@ -26,121 +23,59 @@ window.onload = function () {
         }
     }
 
-    // ================= DETAILS PAGE =================
+    // DETAILS PAGE DATA
     let selectedPG = localStorage.getItem("pg");
 
     if (selectedPG === "sunrise") {
-        document.getElementById("pgName").innerText = "🏠 Sunrise PG";
-        document.getElementById("location").innerText = "📍 Gomti Nagar";
-        document.getElementById("price").innerText = "₹7500/month";
+        document.getElementById("pgName").innerText = "Sunrise PG";
         document.getElementById("pgInfo").innerText =
-            "Single/Double rooms, WiFi available, Food included";
-
+            "Rent: ₹7500 | WiFi: Yes | Food: Available";
         document.getElementById("community").innerText =
-            "4 residents from UP, 1 from Kanpur";
-
-        document.getElementById("facilitiesList").innerHTML = `
-            <li>✔ WiFi</li>
-            <li>✔ Food Available</li>
-            <li>✔ Laundry</li>
-            <li>✔ CCTV Security</li>
-        `;
+            "Residents from UP & Kanpur";
     }
 
     if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "🏠 Green Nest PG";
-        document.getElementById("location").innerText = "📍 Gomti Nagar";
-        document.getElementById("price").innerText = "₹6500/month";
+        document.getElementById("pgName").innerText = "Green Nest PG";
         document.getElementById("pgInfo").innerText =
-            "Affordable rooms, WiFi available, No food";
-
+            "Rent: ₹6500 | WiFi: Yes | Food: No";
         document.getElementById("community").innerText =
             "Residents from Bihar";
-
-        document.getElementById("facilitiesList").innerHTML = `
-            <li>✔ WiFi</li>
-            <li>✔ Parking</li>
-            <li>✔ Security</li>
-        `;
-    }
-     if (selectedPG === "gamma") {
-        document.getElementById("pgName").innerText = "🏠 Gamma PG";
-        document.getElementById("location").innerText = "📍 Indira Nagar";
-        document.getElementById("price").innerText = "₹8000/month";
-        document.getElementById("pgInfo").innerText =
-            "Affordable rooms, WiFi available, food available";
-
-        document.getElementById("community").innerText =
-            "Residents from Bihar";
-
-        document.getElementById("facilitiesList").innerHTML = `
-            <li>✔ WiFi</li>
-            <li>✔ GYM</li>
-            <li>✔ Parking</li>
-            <li>✔ Security</li>
-        `;
-    }
-    if (selectedPG === "pride") {
-        document.getElementById("pgName").innerText = "🏠 Pride PG";
-        document.getElementById("location").innerText = "📍 Matiyari";
-        document.getElementById("price").innerText = "₹5500/month";
-        document.getElementById("pgInfo").innerText =
-            "Affordable rooms, WiFi available, food available";
-
-        document.getElementById("community").innerText =
-            "Residents from Noida";
-
-        document.getElementById("facilitiesList").innerHTML = `
-            <li>✔ WiFi</li>
-            <li>✔ Food</li>
-            <li>✔ Security</li>
-        `;
-    }
-     if (selectedPG === "planex") {
-        document.getElementById("pgName").innerText = "🏠 Planex PG";
-        document.getElementById("location").innerText = "📍 Golf City";
-        document.getElementById("price").innerText = "9000/month";
-        document.getElementById("pgInfo").innerText =
-            "Affordable rooms, WiFi available, food available";
-
-        document.getElementById("community").innerText =
-            "Residents from Bengaluru";
-
-        document.getElementById("facilitiesList").innerHTML = `
-             <li>✔ WiFi</li>
-            <li>✔ GYM</li>
-            <li>✔ Parking</li>
-            <li>✔ Security</li>
-        `;
-    }
-    if (selectedPG === "comfort") {
-        document.getElementById("pgName").innerText = "🏠 Comfort Stay PG";
-        document.getElementById("location").innerText = "📍 Gomti Nagar";
-        document.getElementById("price").innerText = "9000/month";
-        document.getElementById("pgInfo").innerText =
-            "Affordable rooms, WiFi available, food available";
-
-        document.getElementById("community").innerText =
-            "Residents from New Delhi";
-
-        document.getElementById("facilitiesList").innerHTML = `
-             <li>✔ WiFi</li>
-            <li>✔ GYM</li>
-            <li>✔ Parking</li>
-            <li>✔ Security</li>
-        `;
     }
 };
 
-
-// ================= RESULTS → DETAILS =================
+// RESULTS → DETAILS
 function viewDetails(pgName) {
     localStorage.setItem("pg", pgName);
     window.location.href = "details.html";
 }
-
-
-// ================= BACK BUTTON =================
 function goBack() {
     window.location.href = "results.html";
+}
+function goBack() {
+    window.location.href = "results.html";
+}
+fetch("https://hauora.onrender.com/pgs")
+.then(res => res.json())
+.then(data => {
+
+    let container = document.querySelector(".pg-container");
+    container.innerHTML = "";
+
+    data.forEach(pg => {
+        container.innerHTML += `
+            <div class="pg-card">
+                <h3>${pg.name}</h3>
+                <p>📍 ${pg.location}</p>
+                <p>₹${pg.price}</p>
+
+                <button onclick='storePG(${JSON.stringify(pg)})'>
+                    View Details
+                </button>
+            </div>
+        `;
+    });
+});
+function storePG(pg) {
+    localStorage.setItem("pgData", JSON.stringify(pg));
+    window.location.href = "details.html";
 }
