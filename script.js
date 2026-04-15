@@ -1,81 +1,32 @@
-// HOME → RESULTS
-function goToResults() {
-    let hometown = document.getElementById("hometown").value;
+const API_URL = "https://hauora.onrender.com/pgs";
 
-    // Save data in browser
-    localStorage.setItem("hometown", hometown);
+fetch(API_URL)
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("pg-list");
 
-    // Redirect
-    window.location.href = "results.html";
-}
-
-// RESULTS PAGE LOAD
-window.onload = function () {
-    let hometown = localStorage.getItem("hometown");
-
-    if (document.getElementById("match")) {
-        if (hometown && hometown.toLowerCase() === "kanpur") {
-            document.getElementById("match").innerText =
-                "✅ People from your area live here (High Match)";
-        } else {
-            document.getElementById("match").innerText =
-                "⚠️ Medium Match";
-        }
-    }
-
-    // DETAILS PAGE DATA
-    let selectedPG = localStorage.getItem("pg");
-
-    if (selectedPG === "sunrise") {
-        document.getElementById("pgName").innerText = "Sunrise PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹7500 | WiFi: Yes | Food: Available";
-        document.getElementById("community").innerText =
-            "Residents from UP & Kanpur";
-    }
-
-    if (selectedPG === "green") {
-        document.getElementById("pgName").innerText = "Green Nest PG";
-        document.getElementById("pgInfo").innerText =
-            "Rent: ₹6500 | WiFi: Yes | Food: No";
-        document.getElementById("community").innerText =
-            "Residents from Bihar";
-    }
-};
-
-// RESULTS → DETAILS
-function viewDetails(pgName) {
-    localStorage.setItem("pg", pgName);
-    window.location.href = "details.html";
-}
-function goBack() {
-    window.location.href = "results.html";
-}
-function goBack() {
-    window.location.href = "results.html";
-}
-fetch("https://hauora.onrender.com/pgs")
-.then(res => res.json())
-.then(data => {
-
-    let container = document.querySelector(".pg-container");
     container.innerHTML = "";
 
     data.forEach(pg => {
-        container.innerHTML += `
-            <div class="pg-card">
-                <h3>${pg.name}</h3>
-                <p>📍 ${pg.location}</p>
-                <p>₹${pg.price}</p>
+      const card = document.createElement("div");
+      card.className = "pg-card";
 
-                <button onclick='storePG(${JSON.stringify(pg)})'>
-                    View Details
-                </button>
-            </div>
-        `;
+      card.innerHTML = `
+        <h2>${pg.name}</h2>
+        <p><b>Location:</b> ${pg.location}</p>
+        <p><b>Price:</b> ₹${pg.price}</p>
+        <button onclick="viewDetails('${pg.name}')">View Details</button>
+      `;
+
+      container.appendChild(card);
     });
-});
-function storePG(pg) {
-    localStorage.setItem("pgData", JSON.stringify(pg));
-    window.location.href = "details.html";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+
+// redirect to details page
+function viewDetails(name) {
+  localStorage.setItem("selectedPG", name);
+  window.location.href = "details.html";
 }
