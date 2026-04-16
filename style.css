@@ -91,3 +91,17 @@ button {
   padding: 14px;
   margin-top: 12px;
 }
+/* GRID IMPROVED */
+.pg-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* CARD SIZE */
+.pg-card {
+  padding: 22px;
+  border-radius: 14px;
+  min-height: 180px;
+}
