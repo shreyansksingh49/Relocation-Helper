@@ -18,13 +18,20 @@ fetch("https://hauora.onrender.com/pgs")
 .then(data => {
   const pg = data.find(p => p.name === name);
 
-  document.getElementById("details").innerHTML = `
+ document.getElementById("details").innerHTML = `
+  <div class="details-card">
     <h2>${pg.name}</h2>
     <p>📍 ${pg.location}</p>
     <p class="price">₹${pg.price}/month</p>
+
+    <h3>Facilities</h3>
+    <div class="facilities">
+      ${pg.facilities.map(f => `<p>✔ ${f}</p>`).join("")}
+    </div>
+
     <p>📞 ${pg.contact}</p>
-    <button onclick="goBack()">← Back</button>
-  `;
+  </div>
+`;
 });
 
 function goBack() {
