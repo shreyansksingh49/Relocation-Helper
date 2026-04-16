@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PG Details</title>
+  <title>Details</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>PG Details</h1>
+<h1 style="text-align:center;">PG Details</h1>
 
-  <div id="details"></div>
+<div id="details"></div>
 
-  <script>
-    const API_URL = "https://hauora.onrender.com/pgs";
-    const selected = localStorage.getItem("selectedPG");
+<script>
+const API = "https://hauora.onrender.com/pgs";
+const selected = localStorage.getItem("pg");
 
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        const pg = data.find(p => p.name === selected);
+fetch(API)
+.then(res=>res.json())
+.then(data=>{
+  const pg = data.find(p=>p.name === selected);
 
-        const container = document.getElementById("details");
-
-        if (pg) {
-          container.innerHTML = `
-            <h2>${pg.name}</h2>
-            <p><b>Location:</b> ${pg.location}</p>
-            <p><b>Price:</b> ₹${pg.price}</p>
-            <p><b>Contact:</b> ${pg.contact}</p>
-          `;
-        } else {
-          container.innerHTML = "<p>PG not found</p>";
-        }
-      });
-  </script>
+  if(pg){
+    document.getElementById("details").innerHTML = `
+      <div class="card">
+        <h2>${pg.name}</h2>
+        <p><b>Location:</b> ${pg.location}</p>
+        <p><b>Price:</b> ₹${pg.price}</p>
+        <p><b>Contact:</b> ${pg.contact}</p>
+      </div>
+    `;
+  }
+});
+</script>
 
 </body>
 </html>
