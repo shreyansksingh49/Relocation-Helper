@@ -4,33 +4,31 @@
   <title>Details</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="container">
+    <h1>PG Details</h1>
+    <div id="details"></div>
+  </div>
 
-<h1 style="text-align:center;">PG Details</h1>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
 
-<div id="details"></div>
+    fetch("https://hauora.onrender.com/pgs")
+      .then(res => res.json())
+      .then(data => {
+        const pg = data.find(p => p.name === name);
 
-<script>
-const API = "https://hauora.onrender.com/pgs";
-const selected = localStorage.getItem("pg");
-
-fetch(API)
-.then(res=>res.json())
-.then(data=>{
-  const pg = data.find(p=>p.name === selected);
-
-  if(pg){
-    document.getElementById("details").innerHTML = `
-      <div class="card">
-        <h2>${pg.name}</h2>
-        <p><b>Location:</b> ${pg.location}</p>
-        <p><b>Price:</b> ₹${pg.price}</p>
-        <p><b>Contact:</b> ${pg.contact}</p>
-      </div>
-    `;
-  }
-});
-</script>
-
+        document.getElementById("details").innerHTML = `
+          <div class="card">
+            <h2>${pg.name}</h2>
+            <p>${pg.location}</p>
+            <p>₹${pg.price}</p>
+            <p>Contact: ${pg.contact}</p>
+          </div>
+        `;
+      });
+  </script>
 </body>
 </html>
