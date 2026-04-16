@@ -64,3 +64,30 @@ button:hover {
     padding: 25px;
   }
 }
+/* FORM CONTAINER FIX */
+.form-container, .login-box {
+  width: 90%;
+  max-width: 500px;   /* pehle 300-350 tha → ab proper */
+  margin: 80px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* INPUT IMPROVEMENT */
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+/* BUTTON FIX */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+}
