@@ -1,43 +1,17 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #5f6caf, #7c4dff);
+  color: #333;
 }
 
-.hero {
-  text-align: center;
-  margin-top: 150px;
-  color: white;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.container {
-  width: 80%;
-  margin: auto;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-
-.login-box {
+/* Center box */
+.form-container {
   width: 300px;
-  margin: auto;
-  margin-top: 100px;
+  margin: 100px auto;
+  padding: 30px;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
 }
 
@@ -45,4 +19,53 @@ input {
   width: 90%;
   padding: 10px;
   margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: orange;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+
+/* PG Cards */
+.pg-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pg-card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+}
+
+.price {
+  font-weight: bold;
+  color: orange;
+}
+
+/* Details */
+.details-card {
+  width: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
 }
