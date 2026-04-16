@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PG Finder</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="hero">
+    <h1>Find Your Perfect PG 🏠</h1>
+    <p>Students & Working Professionals</p>
 
-<div class="hero">
-  <h1>Find Your Perfect PG 🏠</h1>
-  <p>Students & Working Professionals</p>
-
-  <button onclick="goToLogin()">Login</button>
-  <button onclick="goToResults()">Browse PGs</button>
-</div>
-
-<script>
-function goToLogin(){
-  window.location.href = "login.html";
-}
-function goToResults(){
-  window.location.href = "results.html";
-}
-</script>
-
+    <button onclick="location.href='login.html'">Login</button>
+    <button onclick="location.href='results.html'">Browse PGs</button>
+    <button onclick="location.href='add-pg.html'">List Your PG</button>
+  </div>
 </body>
 </html>
