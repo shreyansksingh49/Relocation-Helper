@@ -4,5 +4,35 @@
     "location": "Gomti Nagar",
     "price": 7500,
     "contact": "9876543210"
+  },
+  {
+    "name": "City Comfort PG",
+    "location": "Aliganj",
+    "price": 6500,
+    "contact": "9123456780"
+  },
+  {
+    "name": "Royal Stay PG",
+    "location": "Indira Nagar",
+    "price": 9000,
+    "contact": "9988776655"
+  },
+  {
+    "name": "Budget Home PG",
+    "location": "Charbagh",
+    "price": 5000,
+    "contact": "8899001122"
+  },
+  {
+    "name": "Elite Residency PG",
+    "location": "Hazratganj",
+    "price": 12000,
+    "contact": "7766554433"
+  },
+  {
+    "name": "Student Hub PG",
+    "location": "Kapoorthala",
+    "price": 7000,
+    "contact": "6655443322"
   }
 ]
