@@ -5,67 +5,93 @@ body {
   color: #333;
 }
 
-/* Center box */
+/* Center container */
 .form-container {
-  width: 300px;
-  margin: 100px auto;
-  padding: 30px;
+  width: 90%;
+  max-width: 350px;
+  margin: 80px auto;
+  padding: 25px;
   background: white;
   border-radius: 15px;
   text-align: center;
 }
 
 input {
-  width: 90%;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
   background: orange;
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 15px;
 }
 
 /* Title */
 .title {
   text-align: center;
   color: white;
-  margin-top: 30px;
+  margin-top: 20px;
+  font-size: 24px;
 }
 
-/* PG Cards */
+/* PG container */
 .pg-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px;
 }
 
+/* PG card */
 .pg-card {
   background: white;
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   border-radius: 15px;
-  width: 250px;
+  width: 280px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .price {
   font-weight: bold;
   color: orange;
+  font-size: 18px;
 }
 
 /* Details */
 .details-card {
-  width: 300px;
-  margin: 100px auto;
-  padding: 30px;
+  width: 90%;
+  max-width: 350px;
+  margin: 60px auto;
+  padding: 25px;
   background: white;
   border-radius: 15px;
   text-align: center;
+}
+
+/* 🔥 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .pg-card {
+    width: 90%;
+  }
+
+  .form-container {
+    margin: 50px auto;
+  }
 }
