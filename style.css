@@ -1,4 +1,3 @@
-/* GOOGLE FONT IMPORT (top me hi rehne de) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 /* RESET */
@@ -11,39 +10,55 @@
 
 /* BODY */
 body {
-  background: #f5f7fa;
-  color: #1f2937;
+  background: #f9fafb;
+  color: #111827;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* HEADER */
-.header {
+/* CENTER FULL PAGE */
+.home-wrapper {
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
 }
 
-.logo {
-  font-size: 20px;
+/* MAIN BOX */
+.home-box {
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* TITLE */
+.home-box h1 {
+  font-size: 32px;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* SUBTEXT */
+.home-box p {
+  color: #6b7280;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* BUTTON */
 button {
-  padding: 10px 16px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   background: #111827;
   color: white;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -51,100 +66,9 @@ button:hover {
   opacity: 0.9;
 }
 
-/* FORM */
-.form-container {
-  max-width: 420px;
-  margin: 60px auto;
-  background: white;
-  padding: 28px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
-
-.form-container h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 11px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 14px;
-}
-
-input:focus {
-  outline: none;
-  border-color: #111827;
-}
-
-/* TITLE */
-.title {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-/* GRID */
-.pg-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-/* CARD */
-.pg-card {
-  background: white;
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  transition: 0.2s;
-}
-
-.pg-card:hover {
-  border-color: #d1d5db;
-}
-
-/* CARD TEXT */
-.pg-card h2 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.pg-card p {
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.price {
-  margin-top: 8px;
-  font-weight: 600;
-  color: #111827;
-}
-
-/* DETAILS */
-.details-card {
-  max-width: 420px;
-  margin: 60px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  text-align: left;
-}
-
 /* MOBILE */
 @media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  .form-container {
-    margin: 40px 15px;
-  }
-
-  .details-card {
-    margin: 40px 15px;
+  .home-box h1 {
+    font-size: 26px;
   }
 }
