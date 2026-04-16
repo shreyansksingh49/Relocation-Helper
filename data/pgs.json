@@ -4,20 +4,41 @@
     "location": "Gomti Nagar",
     "price": 7500,
     "contact": "9876543210",
-    "facilities": "WiFi, Food, AC, Laundry"
+    "facilities": ["WiFi", "Food", "AC", "Laundry"]
   },
   {
     "name": "City Comfort PG",
     "location": "Aliganj",
     "price": 6500,
     "contact": "9123456780",
-    "facilities": "WiFi, Food, Parking"
+    "facilities": ["WiFi", "Parking", "Food"]
   },
   {
     "name": "Royal Stay PG",
     "location": "Indira Nagar",
     "price": 9000,
     "contact": "9988776655",
-    "facilities": "AC, WiFi, Gym"
+    "facilities": ["AC", "WiFi", "Gym"]
+  },
+  {
+    "name": "Budget Home PG",
+    "location": "Charbagh",
+    "price": 5000,
+    "contact": "8899001122",
+    "facilities": ["Food", "Laundry"]
+  },
+  {
+    "name": "Elite Residency PG",
+    "location": "Hazratganj",
+    "price": 12000,
+    "contact": "7766554433",
+    "facilities": ["AC", "WiFi", "Parking", "Food"]
+  },
+  {
+    "name": "Student Hub PG",
+    "location": "Kapoorthala",
+    "price": 7000,
+    "contact": "6655443322",
+    "facilities": ["WiFi", "Food"]
   }
 ]
