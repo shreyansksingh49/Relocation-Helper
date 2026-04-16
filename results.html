@@ -20,14 +20,19 @@ fetch("https://hauora.onrender.com/pgs")
   const container = document.getElementById("pg-list");
 
   data.forEach(pg => {
-    container.innerHTML += `
-      <div class="pg-card">
-        <h2>${pg.name}</h2>
-        <p>📍 ${pg.location}</p>
-        <p class="price">₹${pg.price}/month</p>
-        <button onclick="viewDetails('${pg.name}')">View Details</button>
-      </div>
-    `;
+   container.innerHTML += `
+  <div class="pg-card">
+    <h2>${pg.name}</h2>
+    <p>📍 ${pg.location}</p>
+    <p class="price">₹${pg.price}/month</p>
+
+    <div class="facilities">
+      ${pg.facilities.map(f => `<p>✔ ${f}</p>`).join("")}
+    </div>
+
+    <button onclick="viewDetails('${pg.name}')">View Details</button>
+  </div>
+`;
   });
 });
 
