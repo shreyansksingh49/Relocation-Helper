@@ -1,25 +1,48 @@
-<h2>Add PG</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add PG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<input id="name" placeholder="PG Name">
-<input id="location" placeholder="Location">
-<input id="price" placeholder="Price">
-<input id="contact" placeholder="Contact">
+<body>
+  <div class="login-box">
+    <h2>Add Your PG</h2>
 
-<button onclick="addPG()">Add PG</button>
+    <input id="name" placeholder="PG Name">
+    <input id="location" placeholder="Location">
+    <input id="price" placeholder="Price">
+    <input id="contact" placeholder="Contact Number">
 
-<script>
-function addPG() {
-    fetch("http://localhost:3000/add-pg", {
+    <button onclick="addPG()">Add PG</button>
+  </div>
+
+  <script>
+    function addPG() {
+      const pg = {
+        name: document.getElementById("name").value,
+        location: document.getElementById("location").value,
+        price: document.getElementById("price").value,
+        contact: document.getElementById("contact").value
+      };
+
+      fetch("https://hauora.onrender.com/add-pg", {   // ✅ FIXED (no localhost)
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            name: name.value,
-            location: location.value,
-            price: price.value,
-            contact: contact.value
-        })
-    })
-    .then(res => res.text())
-    .then(data => alert(data));
-}
-</script>
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(pg)
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("PG Added Successfully ✅");
+        window.location.href = "results.html";
+      })
+      .catch(err => {
+        alert("Error adding PG ❌");
+        console.log(err);
+      });
+    }
+  </script>
+</body>
+</html>
