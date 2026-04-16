@@ -4,38 +4,20 @@
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
 
-<div class="form-box">
-  <h2>Login</h2>
-
-  <input id="username" placeholder="Username">
-  <input id="password" type="password" placeholder="Password">
-
-  <button onclick="login()">Login</button>
-</div>
-
-<script>
-function login(){
-  fetch("https://hauora.onrender.com/login",{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body: JSON.stringify({
-      username: username.value,
-      password: password.value
-    })
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    if(data.success){
-      alert("Login Success");
-      window.location.href="results.html";
-    } else {
-      alert("Wrong credentials");
+  <script>
+    function login() {
+      alert("Login Successful ✅");
+      window.location.href = "index.html";
     }
-  });
-}
-</script>
-
+  </script>
 </body>
 </html>
