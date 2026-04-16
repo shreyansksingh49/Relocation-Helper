@@ -18,7 +18,7 @@ fetch("https://hauora.onrender.com/pgs")
 .then(data => {
   const pg = data.find(p => p.name === name);
 
- document.getElementById("details").innerHTML = `
+document.getElementById("details").innerHTML = `
   <div class="details-card">
     <h2>${pg.name}</h2>
     <p>📍 ${pg.location}</p>
