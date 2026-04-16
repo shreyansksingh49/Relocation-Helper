@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find PG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Find Your PG 🔍</h2>
+
+  <input id="city" placeholder="City">
+  <input id="area" placeholder="Area">
+  <input id="hometown" placeholder="Your Hometown">
+  <input id="budget" placeholder="Budget">
+
+  <button onclick="findPG()">Find PGs</button>
+</div>
+
+<script>
+function findPG() {
+  const city = document.getElementById("city").value;
+  const area = document.getElementById("area").value;
+  const budget = document.getElementById("budget").value;
+
+  window.location.href = `results.html?city=${city}&area=${area}&budget=${budget}`;
+}
+</script>
+
+</body>
+</html>
