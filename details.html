@@ -4,31 +4,31 @@
   <title>Details</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="container">
-    <h1>PG Details</h1>
-    <div id="details"></div>
-  </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name");
+<div id="details" class="details-card"></div>
 
-    fetch("https://hauora.onrender.com/pgs")
-      .then(res => res.json())
-      .then(data => {
-        const pg = data.find(p => p.name === name);
+<script>
+const name = localStorage.getItem("pgName");
 
-        document.getElementById("details").innerHTML = `
-          <div class="card">
-            <h2>${pg.name}</h2>
-            <p>${pg.location}</p>
-            <p>₹${pg.price}</p>
-            <p>Contact: ${pg.contact}</p>
-          </div>
-        `;
-      });
-  </script>
+fetch("https://hauora.onrender.com/pgs")
+.then(res => res.json())
+.then(data => {
+  const pg = data.find(p => p.name === name);
+
+  document.getElementById("details").innerHTML = `
+    <h2>${pg.name}</h2>
+    <p>📍 ${pg.location}</p>
+    <p class="price">₹${pg.price}/month</p>
+    <p>📞 ${pg.contact}</p>
+    <button onclick="goBack()">← Back</button>
+  `;
+});
+
+function goBack() {
+  window.location.href = "results.html";
+}
+</script>
+
 </body>
 </html>
