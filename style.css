@@ -105,3 +105,12 @@ button {
   border-radius: 14px;
   min-height: 180px;
 }
+.facilities {
+  margin: 10px 0;
+}
+
+.facilities p {
+  font-size: 14px;
+  color: #374151;
+  margin: 3px 0;
+}
