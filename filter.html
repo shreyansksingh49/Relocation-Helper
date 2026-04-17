@@ -21,13 +21,19 @@
 
 <script>
 function findPG() {
-  const city = document.getElementById("city").value;
-  const area = document.getElementById("area").value;
+  const city = document.getElementById("city").value.toLowerCase();
+  const area = document.getElementById("area").value.toLowerCase();
   const budget = document.getElementById("budget").value;
+  const hometown = document.getElementById("hometown").value.toLowerCase();
 
-  window.location.href = `results.html?city=${city}&area=${area}&budget=${budget}`;
+  // localStorage me save kar
+  localStorage.setItem("city", city);
+  localStorage.setItem("area", area);
+  localStorage.setItem("budget", budget);
+  localStorage.setItem("hometown", hometown);
+
+  window.location.href = "results.html";
 }
 </script>
-
 </body>
 </html>
