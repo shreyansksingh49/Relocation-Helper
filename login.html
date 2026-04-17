@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="login-box">
-    <h2>Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
 
-  <script>
-    function login() {
-      alert("Login Successful ✅");
-      window.location.href = "filter.html";
-    }
-  </script>
+<div class="page-wrapper">
+  <div class="content-box">
+
+    <h2>Login</h2>
+
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="error" style="color:red; margin-top:10px;"></p>
+
+  </div>
+</div>
+
+<script>
+function login() {
+
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  // 🔐 FIXED LOGIN
+  if(user === "admin" && pass === "1234") {
+
+    localStorage.setItem("loggedIn", "true");
+
+    window.location.href = "filter.html";
+  } 
+  else {
+    document.getElementById("error").innerText = "Invalid Username or Password";
+  }
+}
+</script>
+
 </body>
 </html>
