@@ -4,6 +4,7 @@
     "location": "Gomti Nagar",
     "price": 7500,
     "contact": "9876543210",
+    "hometown": "kanpur",
     "facilities": ["WiFi", "Food", "AC", "Laundry"]
   },
   {
@@ -11,6 +12,7 @@
     "location": "Aliganj",
     "price": 6500,
     "contact": "9123456780",
+    "hometown": "lucknow",
     "facilities": ["WiFi", "Parking", "Food"]
   },
   {
@@ -18,27 +20,55 @@
     "location": "Indira Nagar",
     "price": 9000,
     "contact": "9988776655",
-    "facilities": ["AC", "WiFi", "Gym"]
-  },
-  {
-    "name": "Budget Home PG",
-    "location": "Charbagh",
-    "price": 5000,
-    "contact": "8899001122",
-    "facilities": ["Food", "Laundry"]
-  },
-  {
-    "name": "Elite Residency PG",
-    "location": "Hazratganj",
-    "price": 12000,
-    "contact": "7766554433",
-    "facilities": ["AC", "WiFi", "Parking", "Food"]
+    "hometown": "delhi",
+    "facilities": ["AC", "Gym", "WiFi"]
   },
   {
     "name": "Student Hub PG",
     "location": "Kapoorthala",
     "price": 7000,
     "contact": "6655443322",
+    "hometown": "kanpur",
+    "facilities": ["Food", "WiFi"]
+  },
+  {
+    "name": "Green View PG",
+    "location": "Mahanagar",
+    "price": 8000,
+    "contact": "9090909090",
+    "hometown": "prayagraj",
+    "facilities": ["WiFi", "AC", "Parking"]
+  },
+  {
+    "name": "Elite Stay PG",
+    "location": "Hazratganj",
+    "price": 12000,
+    "contact": "8080808080",
+    "hometown": "delhi",
+    "facilities": ["AC", "WiFi", "Food", "Gym"]
+  },
+  {
+    "name": "Comfort Living PG",
+    "location": "Chinhat",
+    "price": 6000,
+    "contact": "7070707070",
+    "hometown": "kanpur",
+    "facilities": ["WiFi", "Laundry"]
+  },
+  {
+    "name": "Urban Nest PG",
+    "location": "Jankipuram",
+    "price": 6800,
+    "contact": "6060606060",
+    "hometown": "lucknow",
+    "facilities": ["Food", "Parking"]
+  },
+  {
+    "name": "Metro Stay PG",
+    "location": "Charbagh",
+    "price": 5500,
+    "contact": "5050505050",
+    "hometown": "varanasi",
     "facilities": ["WiFi", "Food"]
   }
 ]
