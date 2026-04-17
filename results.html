@@ -20,26 +20,57 @@
   </div>
 
 <script>
+const city = localStorage.getItem("city") || "";
+const area = localStorage.getItem("area") || "";
+const budget = localStorage.getItem("budget") || "";
+const hometown = localStorage.getItem("hometown") || "";
+
 fetch("https://hauora.onrender.com/pgs")
 .then(res => res.json())
 .then(data => {
+
   const container = document.getElementById("pg-list");
 
-  data.forEach(pg => {
-   container.innerHTML += `
-  <div class="pg-card">
-    <h2>${pg.name}</h2>
-    <p>📍 ${pg.location}</p>
-    <p class="price">₹${pg.price}/month</p>
+  // 🔥 FILTER LOGIC
+  const filtered = data.filter(pg => {
 
-    <div class="facilities">
-      ${pg.facilities.map(f => `<p>✔ ${f}</p>`).join("")}
-    </div>
+    return (
+      (city === "" || pg.location.toLowerCase().includes(city)) &&
+      (area === "" || pg.location.toLowerCase().includes(area)) &&
+      (budget === "" || pg.price <= Number(budget))
+    );
 
-    <button onclick="viewDetails('${pg.name}')">View Details</button>
-  </div>
-`;
   });
+
+  // ❌ agar kuch nahi mila
+  if(filtered.length === 0){
+    container.innerHTML = "<p>No PGs found 😢</p>";
+    return;
+  }
+
+  // ✅ SHOW DATA
+  filtered.forEach(pg => {
+
+    const match = pg.hometown === hometown;
+
+    container.innerHTML += `
+      <div class="pg-card">
+
+        ${match ? `<p style="color:green;font-weight:bold;">⭐ Same Hometown Match</p>` : ""}
+
+        <h2>${pg.name}</h2>
+        <p>📍 ${pg.location}</p>
+        <p class="price">₹${pg.price}/month</p>
+
+        <div class="facilities">
+          ${pg.facilities.map(f => `<p>✔ ${f}</p>`).join("")}
+        </div>
+
+        <button onclick="viewDetails('${pg.name}')">View Details</button>
+      </div>
+    `;
+  });
+
 });
 
 function viewDetails(name) {
