@@ -25,10 +25,9 @@ if(localStorage.getItem("loggedIn") !== "true"){
   </div>
 
 <script>
-const city = localStorage.getItem("city") || "";
-const area = localStorage.getItem("area") || "";
-const budget = localStorage.getItem("budget") || "";
-const hometown = localStorage.getItem("hometown") || "";
+const area = (localStorage.getItem("area") || "").toLowerCase();
+const budget = (localStorage.getItem("budget") || "").trim();
+const hometown = (localStorage.getItem("hometown") || "").toLowerCase();
 
 fetch("https://hauora.onrender.com/pgs")
 .then(res => res.json())
@@ -36,37 +35,34 @@ fetch("https://hauora.onrender.com/pgs")
 
   const container = document.getElementById("pg-list");
 
-  // 🔥 FILTER LOGIC
   const filtered = data.filter(pg => {
 
+    const location = pg.location.toLowerCase();
+
     return (
-      (city === "" || pg.location.toLowerCase().includes(city)) &&
-      (area === "" || pg.location.toLowerCase().includes(area)) &&
-      (hometown === "" || pg.location.toLowerCase().includes(hometown)) &&
+      (area === "" || location.includes(area)) &&
       (budget === "" || pg.price <= Number(budget))
     );
 
   });
 
-  // ❌ agar kuch nahi mila
   if(filtered.length === 0){
     container.innerHTML = "<p>No PGs found 😢</p>";
     return;
   }
 
-  // ✅ SHOW DATA
   filtered.forEach(pg => {
 
-    const match = pg.hometown === hometown;
+    const match = pg.hometown.toLowerCase() === hometown;
 
     container.innerHTML += `
       <div class="pg-card">
 
-        ${match ? `<p style="color:green;font-weight:bold;">⭐ Same Hometown Match</p>` : ""}
+        ${match ? `<p style="color:green;font-weight:bold;">⭐ Same Hometown</p>` : ""}
 
         <h2>${pg.name}</h2>
         <p>📍 ${pg.location}</p>
-        <p> 🏠 Hometown: ${pg.hometown}<p/>
+        <p>🏠 ${pg.hometown}</p>
         <p class="price">₹${pg.price}/month</p>
 
         <div class="facilities">
