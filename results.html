@@ -42,6 +42,7 @@ fetch("https://hauora.onrender.com/pgs")
     return (
       (city === "" || pg.location.toLowerCase().includes(city)) &&
       (area === "" || pg.location.toLowerCase().includes(area)) &&
+      (hometown === "" || pg.location.toLowerCase().includes(hometown)) &&
       (budget === "" || pg.price <= Number(budget))
     );
 
